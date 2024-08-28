@@ -1,0 +1,29 @@
+﻿<Window x:Class="RewatchTranscriptFetcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rewatch Transcript Fetcher" Height="350" Width="525">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Rewatch Domain" Margin="0,0,0,10"/>
+            <TextBox x:Name="DomainTextBox" Width="400" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Rewatch API Key" Margin="0,0,0,10"/>
+            <PasswordBox x:Name="ApiKeyPasswordBox" Width="400" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Select Date Range" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal">
+                <DatePicker x:Name="StartDatePicker" Width="200"/>
+                <DatePicker x:Name="EndDatePicker" Width="200" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <Button Content="Fetch and Save Transcripts" Width="200" Margin="0,20,0,0" Click="OnFetchAndSaveClick"/>
+        </StackPanel>
+        <!-- Spinner with processed count label -->
+        <Grid x:Name="SpinnerGrid" HorizontalAlignment="Center" Visibility ="Collapsed" VerticalAlignment="Center">
+            <ProgressBar x:Name="Spinner" IsIndeterminate="True" Height="20" Width="200" />
+            <TextBlock x:Name="ProcessedCountLabel" Text="Processing Videos" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Foreground="Black" FontWeight="Bold" />
+        </Grid>
+    </Grid>
+</Window>
